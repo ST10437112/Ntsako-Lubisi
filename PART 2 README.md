@@ -3,3 +3,4 @@ Renamed Homepage to index.html following standard web design practices.
 Applied consistent color scheme and layout across all pages. 
 Basic navigation and responsive design. 
 Added comments throughout the HTML and CSS for better readability.
+Applied responsive styling for mobile deices. 
