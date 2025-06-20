@@ -1,126 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CSS Website Layout</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+  <title>NP Boutique | Where Elegance Meets Everyday</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-body {
-  margin: 0;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-/* Style the header */
-.header {
-  background-color: #0e5066;
-  padding: 20px;
-  text-align: center;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      font-size: 1rem;
+    }
 
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #42819e;
-}
+    .header {
+      background-color: #62a0c6;
+      padding: 2rem 1rem;
+      text-align: center;
+      color: white;
+    }
 
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+    .header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
 
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+    .header p {
+      font-size: 1.125rem;
+      margin-top: 0.5rem;
+    }
 
-/* Create three unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-}
+    .topnav {
+      background-color: #56b8ab;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-/* Left and right column */
-.column.side {
-  width: 25%;
-}
+    .topnav a {
+      flex: 1 1 auto;
+      text-align: center;
+      padding: 1rem;
+      color: #f2f2f2;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-/* Middle column */
-.column.middle {
-  width: 50%;
-}
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
 
-/* Clear floats after the columns */
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1rem;
+      gap: 1rem;
+    }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column.side, .column.middle {
-    width: 100%;
-  }
-}
+    .column {
+      padding: 1rem;
+    }
 
-/* Style the footer */
-.footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-}
-</style>
+    .column.side {
+      flex: 1 1 25%;
+      background-color: #e6f4f9;
+    }
+
+    .column.middle {
+      flex: 1 1 50%;
+      background-color: #ffffff;
+    }
+
+    .column.middle img {
+      width: 75%;
+      height: auto;
+      margin-top: 1rem;
+      border-radius: 8px;
+    }
+
+    .footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.875rem;
+      color: #333;
+    }
+
+    /* Tablet */
+    @media screen and (max-width: 768px) {
+      .topnav a {
+        flex: 1 1 50%;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .column.side,
+      .column.middle {
+        flex: 1 1 50%;
+      }
+    }
+
+    /* Mobile */
+    @media screen and (max-width: 480px) {
+      .topnav a {
+        flex: 1 1 100%;
+        padding: 0.75rem;
+      }
+
+      .header h1 {
+        font-size: 1.5rem;
+      }
+
+      .header p {
+        font-size: 1rem;
+      }
+
+      .row {
+        padding: 0.5rem;
+        gap: 0.5rem;
+      }
+
+      .column {
+        padding: 0.25rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>NP Boutique</h1>
-  <p>Where Elegancy Meet Everyday</p>
-</div>
-
-<div class="topnav">
-    <a href="Homepage.html">Homepage</a>
-    <a href="AboutUs.html">AboutUs</a>
-    <a href="OurClothing.html">OurClothing</a>
-    <a href="ContactUs.html">ContactUs</a>
-    <a href="Click&Collection.html">Click&Collection</a>
-</div>
-
-<div class="row">
-  <div class="column side">
-    <h2>Our Mission</h2>
-    <p>To provide elegant high quality fashion.</p>
+  <div class="header">
+    <h1>NP Boutique</h1>
+    <p>Where Elegance Meets Everyday</p>
   </div>
-  
-  <div class="column middle">
-    <h2>Background</h2>
-    <p>NP Boutique is a clothing brand that was established to give customers the opportunity to define themselves using fashion. The boutique offeres elegant clothing for men and women aged 20-40, making sure they look and feel good.</p>
-    <p></p>
-    <h2></h2>
-<img src="Img2.jpg" alt="Trulli" width="150" height="75">
 
-  </div>
-  
-  <div class="column side">
-    <h2>Our Vision</h2>
-    <p>To become one of the most leading fashion boutique.</p>
-  </div>
-</div>
+  <nav class="topnav">
+    <a href="index.html">Index</a>
+    <a href="AboutUs.html">About Us</a>
+    <a href="OurClothing.html">Our Clothing</a>
+    <a href="ContactUs.html">Contact Us</a>
+    <a href="Pickup.html">Pickup</a>
+  </nav>
 
-<div class="footer">
-  <p>&copy; NP Boutique, 2025</p>
-</div>
-  
+  <main class="row">
+    <div class="column side">
+      <h2>Our Mission</h2>
+      <p>To provide elegant high-quality fashion.</p>
+    </div>
+
+    <div class="column middle">
+      <h2>Background</h2>
+      <p>
+        NP Boutique was founded with a vision to bridge the gap between elegance and everyday wear. Inspired by the idea that fashion should empower rather than intimidate, our boutique offers high-quality, stylish pieces for modern men and women aged 20 to 40.
+      </p>
+      <p>
+        From humble beginnings as a small local shop, we've grown into a fashion destination that values individuality, craftsmanship, and personal expression. Each item we carry is handpicked to reflect our core values: sophistication, confidence, and inclusivity.
+      </p>
+      <p>
+        Our team is passionate about helping customers find their signature style — whether it’s a smart work outfit, casual weekend look, or something special for an event. We believe fashion should tell a story, and NP Boutique is here to help you tell yours.
+      </p>
+      <p>
+        Shop with us and experience style made simple.
+      </p>
+
+      <img src="Img2.jpg" alt="Model wearing NP Boutique clothing in front of store">
+    </div>
+
+    <div class="column side">
+      <h2>Our Vision</h2>
+      <p>To become one of the most leading fashion boutiques.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 NP Boutique. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
-
-

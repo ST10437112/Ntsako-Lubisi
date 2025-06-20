@@ -1,127 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CSS Website Layout</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+  <title>NP Boutique | Contact Us</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-body {
-  margin: 0;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-/* Style the header */
-.header {
-  background-color: #757c80;
-  padding: 20px;
-  text-align: center;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      background-color: #f9f9f9;
+    }
 
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
+    .header {
+      background-color: #62a0c6;
+      padding: 2rem 1rem;
+      text-align: center;
+      color: white;
+    }
 
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+    .header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
 
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+    .header p {
+      margin-top: 0.5rem;
+      font-size: 1.125rem;
+    }
 
-/* Create three unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-}
+    .topnav {
+      background-color: #56b8ab;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-/* Left and right column */
-.column.side {
-  width: 25%;
-}
+    .topnav a {
+      flex: 1 1 auto;
+      padding: 1rem;
+      color: #f2f2f2;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-/* Middle column */
-.column.middle {
-  width: 50%;
-}
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
 
-/* Clear floats after the columns */
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1rem;
+      gap: 1rem;
+    }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column.side, .column.middle {
-    width: 100%;
-  }
-}
+    .column {
+      padding: 1rem;
+    }
 
-/* Style the footer */
-.footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-}
-</style>
+    .column.side {
+      flex: 1 1 25%;
+      background-color: #eaf4f7;
+    }
+
+    .column.middle {
+      flex: 1 1 50%;
+      background-color: #ffffff;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #62a0c6;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4a88ad;
+    }
+
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      margin-top: 1rem;
+      border-radius: 8px;
+    }
+
+    .social-promo {
+      background-color: #f2f2f2;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .social-promo h2 {
+      margin-top: 0;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      color: white;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .social-btn.facebook {
+      background-color: #3b5998;
+    }
+
+    .social-btn.instagram {
+      background-color: #e1306c;
+    }
+
+    .footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.875rem;
+      color: #333;
+    }
+
+    @media screen and (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .topnav a {
+        flex: 1 1 50%;
+      }
+
+      .column.middle, .column.side {
+        flex: 1 1 100%;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .header h1 {
+        font-size: 1.75rem;
+      }
+
+      .header p {
+        font-size: 1rem;
+      }
+
+      .topnav a {
+        flex: 1 1 100%;
+        padding: 0.75rem;
+      }
+
+      .row {
+        padding: 0.5rem;
+        gap: 0.5rem;
+      }
+
+      .column {
+        padding: 0.75rem;
+      }
+
+      iframe {
+        height: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>NP Boutique</h1>
-  <p>Where Elegancy Meet Everyday</p>
-</div>
-
-<div class="topnav">
-    <a href="Homepage.html">Homepage</a>
-    <a href="AboutUs.html">AboutUs</a>
-    <a href="OurClothing.html">OurClothing</a>
-    <a href="ContactUs.html">ContactUs</a>
-    <a href="Click&Collection.html">Click&Collection</a>
-</div>
-
-<div class="row">
-  <div class="column side">
-    <h2></h2>
-    <p></p>
+  <!-- Header -->
+  <div class="header">
+    <h1>NP Boutique</h1>
+    <p>Where Elegance Meets Everyday</p>
   </div>
-  
-  <div class="column middle">
-    <h2>Get in touch with us</h2>
-    <p>If customers need any advice regarding our service,or they have questions they can contact us or visit our store. We'd love to hear from them. </p>
-    <p></p>
-  </div>
-  
-  <div class="column side">
-    <h2>Contact details</h2>
-    <p>Email: NP Boutique@outlook.com</p>
-    <p>Mobile Number: 0711574386</p>
-    <p>Adress: 41 Brown Street, Nelspruit, 1200</p>
-    <p>Business Hours: Monday-Friday 9am-6pm</p>
-  </div>
-</div>
 
-<div class="footer">
-  <p>&copy; NP Boutique, 2025</p>
-</div>
+  <!-- Navigation -->
+  <nav class="topnav">
+    <a href="index.html">Index</a>
+    <a href="AboutUs.html">About Us</a>
+    <a href="OurClothing.html">Our Clothing</a>
+    <a href="ContactUs.html">Contact Us</a>
+    <a href="Pickup.html">Pickup</a>
+  </nav>
 
-  
+  <!-- Main Content -->
+  <main>
+    <div class="row">
+      <!-- Contact Form -->
+      <div class="column middle">
+        <h2>Get in Touch with Us</h2>
+        <p>If you need any advice or have questions about our services, feel free to contact us or visit our store. We'd love to hear from you!</p>
+
+        <form id="contactForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+
+        <p id="formMessage" style="color: green; display: none;">Thank you for your message!</p>
+      </div>
+
+      <!-- Contact Info and Map -->
+      <div class="column side">
+        <h2>Contact Details</h2>
+        <p><strong>Email:</strong> npboutique@outlook.com</p>
+        <p><strong>Mobile:</strong> 071 157 4386</p>
+        <p><strong>Address:</strong> 41 Brown Street, Nelspruit, 1200</p>
+        <p><strong>Business Hours:</strong> Mon–Fri, 9am – 6pm</p>
+
+        <h3>Find Us on the Map</h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.0660749529163!2d30.973015615044812!3d-25.471339583755557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee8336b9613a17f%3A0x1ac1be8cb84360a6!2s41%20Brown%20St%2C%20Mbombela%2C%201200%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1714931578882!5m2!1sen!2sza" 
+          allowfullscreen 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </main>
+
+  <!-- Social Media Promo -->
+  <section class="social-promo">
+    <h2>Follow NP Boutique</h2>
+    <p>Stay connected and see our latest collections, offers, and fashion updates on social media.</p>
+
+    <div class="social-links">
+      <a href="https://www.facebook.com/npboutique" target="_blank" class="social-btn facebook">Facebook</a>
+      <a href="https://www.instagram.com/npboutique" target="_blank" class="social-btn instagram">Instagram</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>© 2025 NP Boutique. All rights reserved.</p>
+  </div>
+
+  <!-- Optional JS to simulate form success message -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const message = document.getElementById('formMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      message.style.display = 'block';
+      form.reset();
+    });
+  </script>
+
 </body>
 </html>
-
-

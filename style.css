@@ -1,0 +1,117 @@
+body {
+  background-image: url("img5.jpg"); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-shadow: 20px 10px 50px rgb(222, 215, 215);
+  font-size: 100px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  background-color: #f9f9f9;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar li {
+  font-size: 24px;
+  padding: 30px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: rgb(20, 21, 21);
+}
+
+h3 {
+  font-size: larger;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-style: oblique;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery-item {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+  height: 150px;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox styles */
+#lightboxOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+#lightboxOverlay.active {
+  display: flex;
+}
+
+#lightboxOverlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+
+p {
+  color: white;
+  font-size: larger;
+  padding: 15px;
+  margin: 15px;
+}
+
+.footer {
+  color: #f1f1f1;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+}

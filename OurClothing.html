@@ -1,127 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CSS Website Layout</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+  <title>NP Boutique | Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-body {
-  margin: 0;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-/* Style the header */
-.header {
-  background-color: #569b1e;
-  padding: 20px;
-  text-align: center;
-}
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      background-color: #f9f9f9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #b19221;
-}
+    .header {
+      background-color: #62a0c6;
+      padding: 2rem 1rem;
+      text-align: center;
+      color: white;
+    }
 
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+    .header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
 
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+    .header p {
+      font-size: 1.125rem;
+      margin-top: 0.5rem;
+    }
 
-/* Create three unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-}
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #56b8ab;
+    }
 
-/* Left and right column */
-.column.side {
-  width: 25%;
-}
+    .topnav a {
+      flex: 1 1 auto;
+      padding: 1rem;
+      text-align: center;
+      color: #f2f2f2;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-/* Middle column */
-.column.middle {
-  width: 50%;
-}
+    .topnav a:hover {
+      background-color: #ddd;
+      color: #333;
+    }
 
-/* Clear floats after the columns */
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
+    .content {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+    }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column.side, .column.middle {
-    width: 100%;
-  }
-}
+    .column {
+      padding: 1rem;
+    }
 
-/* Style the footer */
-.footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-}
-</style>
+    .column.side {
+      flex: 1 1 25%;
+      background-color: #eaf4f7;
+    }
+
+    .column.middle {
+      flex: 1 1 50%;
+      background-color: #ffffff;
+    }
+
+    .column img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-top: 1rem;
+    }
+
+    .gallery {
+      margin-top: 1.5rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .gallery-item {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    /* Tabs */
+    .tabs {
+      margin-top: 2rem;
+    }
+
+    .tab-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .tab-buttons button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #56b8ab;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .tab-buttons button.active {
+      background-color: #3e8e7e;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.875rem;
+      color: #333;
+    }
+
+    /* Tablet */
+    @media screen and (max-width: 768px) {
+      .topnav a {
+        flex: 1 1 50%;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .column.middle, .column.side {
+        flex: 1 1 100%;
+      }
+    }
+
+    /* Mobile */
+    @media screen and (max-width: 480px) {
+      .topnav a {
+        flex: 1 1 100%;
+        padding: 0.75rem;
+      }
+
+      .header h1 {
+        font-size: 1.75rem;
+      }
+
+      .header p {
+        font-size: 1rem;
+      }
+
+      .content {
+        gap: 0.5rem;
+        padding: 0.5rem;
+      }
+
+      .column {
+        padding: 0.75rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>NP Boutique</h1>
-  <p>Where Elegancy Meet Everyday</p>
-</div>
-
-<div class="topnav">
-    <a href="Homepage.html">Homepage</a>
-    <a href="AboutUs.html">AboutUs</a>
-    <a href="OurClothing.html">OurClothing</a>
-    <a href="ContactUs.html">ContactUs</a>
-    <a href="Click&Collection.html">Click&Collection</a>
-</div>
-
-<div class="row">
-  <div class="column side">
-    <h2></h2>
-    <p></p>
-    <h2></h2>
-<img src="Img1.jpg" alt="Trulli" width="300" height="150">
-
+  <div class="header">
+    <h1>NP Boutique</h1>
+    <p>Where Elegancy Meets Everyday</p>
   </div>
-  
-  <div class="column middle">
-    <h2>Main Content</h2>
-    <p>NP Boutique is a small business that focuses on affordable, high quality clothes for men and women.Where fashion meets elegancy, we provide fashion apparel, accesories and shoes. explore our collection to discover your new favourite outfit. </p>
-    <p></p>
-  </div>
-  
-  <div class="column side">
-    <h2>Elegant</h2>
-    <p>if you looking for something formal or casual we have got your covered.</p>
-  </div>
-</div>
 
-<div class="footer">
-  <p>&copy; NP Boutique, 2025</p>
-</div>
+  <div class="topnav">
+    <a href="index.html">Index</a>
+    <a href="AboutUs.html">About Us</a>
+    <a href="OurClothing.html">Our Clothing</a>
+    <a href="ContactUs.html">Contact Us</a>
+    <a href="Pickup.html">Pickup</a>
+  </div>
 
-  
+  <div class="content">
+    <div class="column side">
+      <img src="Img1.jpg" alt="Elegant Clothing">
+    </div>
+
+    <div class="column middle">
+      <h2>Main Content</h2>
+      <p>NP Boutique is a small business that focuses on affordable, high-quality clothes for men and women. Where fashion meets elegance, we provide fashion apparel, accessories, and shoes. Explore our collection to discover your new favourite outfit.</p>
+
+      <!-- Tabs Section -->
+      <div class="tabs">
+        <div class="tab-buttons">
+          <button class="tab-btn active" onclick="openTab(event, 'featured')">Featured</button>
+          <button class="tab-btn" onclick="openTab(event, 'new')">New Arrivals</button>
+          <button class="tab-btn" onclick="openTab(event, 'sale')">Sale</button>
+        </div>
+
+        <div id="featured" class="tab-content active">
+          <h3>Featured</h3>
+          <p>Our best-selling elegant dresses and signature handbags that define your style.</p>
+        </div>
+
+        <div id="new" class="tab-content">
+          <h3>New Arrivals</h3>
+          <p>Freshly stocked collections for the season — explore the latest trends.</p>
+        </div>
+
+        <div id="sale" class="tab-content">
+          <h3>Sale</h3>
+          <p>Don’t miss out! Grab your favorite pieces at discounted prices.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column side">
+      <h3>Explore Our Collections</h3>
+      <ul>
+        <li><strong>Women:</strong> Elegant dresses, casual tops, and office-ready sets.</li>
+        <li><strong>Men:</strong> Sleek, modern fashion for day or night.</li>
+        <li><strong>Accessories:</strong> Handbags, jewelry and scarves.</li>
+        <li><strong>Shoes:</strong> Stylish comfort that walks with you.</li>
+      </ul>
+
+      <div class="gallery">
+        <h2>Our Collection</h2>
+        <div class="gallery-grid">
+          <img src="img6.jpg" alt="Elegant Dress" class="gallery-item" />
+          <img src="img7.jpg" alt="Accessories" class="gallery-item" />
+          <img src="img8.jpg" alt="Men's Wear" class="gallery-item" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© <span id="footerYear"></span> NP Boutique. All rights reserved.</p>
+  </div>
+
+  <script>
+    // Set the current year dynamically in footer
+    document.getElementById("footerYear").textContent = new Date().getFullYear();
+
+    // Tab functionality
+    function openTab(evt, tabName) {
+      const tabContents = document.getElementsByClassName("tab-content");
+      const tabButtons = document.getElementsByClassName("tab-btn");
+
+      // Hide all tab contents
+      for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove("active");
+      }
+
+      // Remove active class from all buttons
+      for (let i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].classList.remove("active");
+      }
+
+      // Show the selected tab
+      document.getElementById(tabName).classList.add("active");
+
+      // Highlight the active button
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+
 </body>
 </html>
-
 
